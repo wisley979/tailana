@@ -1,0 +1,204 @@
+/* Fundo escuro com gradiente sutil */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 50px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #ff6b9d;
+    text-shadow: 0 0 20px #ff6b9d;
+}
+
+header p {
+    font-size: 1.5em;
+    color: #cccccc;
+}
+
+/* Seção de fotos */
+.photos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.photo-container {
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.photo-container:hover {
+    transform: scale(1.1);
+}
+
+.photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.photo:hover {
+    box-shadow: 0 0 30px rgba(255, 107, 157, 0.8);
+}
+
+.photo-container p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ff6b9d;
+}
+
+/* Seção de mensagens */
+.messages {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.message-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+    margin-bottom: 30px;
+}
+
+.message-box h2 {
+    color: #ff6b9d;
+    font-size: 2em;
+}
+
+.message-box p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Corações flutuantes */
+.hearts-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2em;
+    animation: float 4s infinite ease-in-out;
+}
+
+#heart1 {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+#heart2 {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+#heart3 {
+    left: 80%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Caixinhas surpresas */
+.surprises {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.surprises h2 {
+    font-size: 2.5em;
+    color: #ff6b9d;
+    margin-bottom: 30px;
+}
+
+.surprise-box {
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    margin: 20px;
+    perspective: 1000px;
+}
+
+.box-front, .box-inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.6s;
+}
+
+.box-front {
+    background: linear-gradient(45deg, #ff6b9d, #c44569);
+    color: white;
+}
+
+.box-inside {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff6b9d;
+    transform: rotateY(180deg);
+}
+
+.surprise-box.flipped .box-front {
+    transform: rotateY(180deg);
+}
+
+.surprise-box.flipped .box-inside {
+    transform: rotateY(0deg);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.2em;
+    color: #cccccc;
+}
+
+/* Animações gerais */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    .photos { flex-direction: column; align-items: center; }
+    .photo { width: 250px; height: 250px; }
+    .surprise-box { width: 200px; height: 120px; }
+}
